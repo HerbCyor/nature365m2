@@ -14,7 +14,7 @@ export function LoginForm() {
                     <input type="password" className="form-control" id="floatingPassword" placeholder="senha" />
                     <label htmlFor="floatingPassword">Senha</label>
                 </div>
-                <button className="btn btn-primary mt-5 mb-3 w-100 py-2" type="submit"> Log in </button>
+                <button className="btn btn-primary mt-5 mb-3 w-100 py-2" type="submit"> Entrar </button>
                 <p> Não possui cadastro? <Link to="/cadastrar" >clique aqui</Link></p>
 
             </form>
