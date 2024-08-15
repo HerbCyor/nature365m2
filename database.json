@@ -1,4 +1,23 @@
 {
-    "users": [],
+    "users": [
+        {
+            "id": "ef9f",
+            "fullName": "teste",
+            "gender": "teste",
+            "birthDate": "teste",
+            "cpf": "1",
+            "email": "t@t.com",
+            "password": "teste",
+            "confirmPassword": "teste",
+            "streetName": "t",
+            "addressNumber": "t",
+            "addressComplement": "t",
+            "addressArea": "t",
+            "addressCity": "t",
+            "addressState": "t",
+            "addressCountry": "t",
+            "addressZipcode": "t"
+        }
+    ],
     "pointsOfInterest": []
 }

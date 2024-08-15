@@ -9,9 +9,10 @@ export const AuthContext = createContext({
 
 async function apiAuthenticate(data) {
     // mock implementation of api authentication and token generation
-    const userList = await axios.get("http://localhost:3000/users")
+    const userList = await (await axios.get("http://localhost:3000/users")).data
+    console.log("list", userList)
     const user = userList.filter((u) => u.email === data.email)[0]
-
+    console.log("user", user)
     if (!user) {
         return null
     }
@@ -41,12 +42,17 @@ export function AuthProvider({ children }) {
     })
 
     async function signIn(data) {
+        try {
+            const userData = await apiAuthenticate(data)
 
-        const userData = await apiAuthenticate(data)
-        setUser({ id: userData.id, email: userData.email, fullName: userData.fullName })
+            setUser({ id: userData.id, email: userData.email, fullName: userData.fullName })
 
-        localStorage.setItem("@nature365:userLogged", JSON.stringify({ id: userData.id, email: userData.email, fullName: userData.fullName }))
-        localStorage.setItem("@nature365:token", JSON.stringify({ token: userData.token }))
+            localStorage.setItem("@nature365:userLogged", JSON.stringify({ id: userData.id, email: userData.email, fullName: userData.fullName }))
+            localStorage.setItem("@nature365:token", JSON.stringify({ token: userData.token }))
+
+        } catch (error) {
+            console.log(error)
+        }
 
 
     }
@@ -62,7 +68,7 @@ export function AuthProvider({ children }) {
 }
 
 export function useAuth() {
-    const context = useContext(AuthContext)
+    const contexto = useContext(AuthContext)
 
-    return context
+    return contexto
 }
