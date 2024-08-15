@@ -1,26 +1,63 @@
 import axios from "axios"
 import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
+import { object, ref, string } from 'yup'
 
 export function SignUpForm() {
 
+    //Simple Schema Validation with yup
+    let userSchema = object({
+        fullName: string().required(),
+        gender: string().required(),
+        birthDate: string().required(),
+        cpf: string().required(),
+        email: string().email().required(),
+        password: string().required(),
+        confirmPassword: string().oneOf([ref('password'), null], "As senhas devem ser iguais"),
+        streetName: string().required(),
+        addressNumber: string().required(),
+        addressComplement: string().required(),
+        addressArea: string().required(),
+        addressCity: string().required(),
+        addressState: string().required(),
+        addressCountry: string().required(),
+        addressZipcode: string().required(),
+    })
+
+    async function verifyUniqueCpf(data) {
+        const users = await axios.get('http://localhost:3000/users')
+        for (let user of users.data) {
+            if (user.cpf === data.cpf) {
+                return false
+            }
+        }
+        return true
+    }
+
     const { register, handleSubmit } = useForm()
     const navigate = useNavigate()
+
     async function createUser(data) {
 
         try {
-            const response = await axios.post('http://localhost:3000/users', data)
+            const validData = await userSchema.validate(data)
+            const isValidCpf = await verifyUniqueCpf(data)
+            if (isValidCpf) {
+                const response = await axios.post('http://localhost:3000/users', validData)
 
-            if (response.ok === false) {
-                alert("Houve um erro ao cadastrar usuário")
+                if (response.ok === false) {
+                    alert("Houve um erro ao cadastrar usuário")
+                } else {
+                    alert("pessoa cadastrada com sucesso")
+                    navigate("/login", { replace: true })
+                }
             } else {
-                alert("pessoa cadastrada com sucesso")
-                navigate("/login", { replace: true })
+                alert("CPF já cadastrado")
             }
 
 
         } catch (error) {
-            alert("Houve um erro ao cadastrar usuário")
+            alert(error.message)
         }
 
     }
@@ -33,9 +70,8 @@ export function SignUpForm() {
 
                 <div className="mb-3">
                     <label htmlFor="fullName" className="form-label text-right">Nome Completo</label>
-                    <input type="text" className="form-control" id="fullName" {...register('fullName', { required: "O nome é obrigatório" })} />
+                    <input type="text" className="form-control" id="fullName" {...register('fullName')} />
 
-                    {/* to do {formState.errors.fullName.message} */}
                 </div>
 
                 <div className="mb-3">
