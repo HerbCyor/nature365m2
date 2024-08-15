@@ -11,7 +11,7 @@ export function LoginForm() {
     })
 
     const { register, handleSubmit, formState } = useForm()
-    const { errors, isSubmitting } = formState
+    const { isSubmitting } = formState
     const { signIn } = useAuth()
     const navigate = useNavigate()
 

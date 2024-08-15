@@ -1,23 +1,41 @@
 {
-    "users": [
-        {
-            "id": "ef9f",
-            "fullName": "teste",
-            "gender": "teste",
-            "birthDate": "teste",
-            "cpf": "1",
-            "email": "t@t.com",
-            "password": "teste",
-            "confirmPassword": "teste",
-            "streetName": "t",
-            "addressNumber": "t",
-            "addressComplement": "t",
-            "addressArea": "t",
-            "addressCity": "t",
-            "addressState": "t",
-            "addressCountry": "t",
-            "addressZipcode": "t"
-        }
-    ],
-    "pointsOfInterest": []
+  "users": [
+    {
+      "id": "ef9f",
+      "fullName": "teste",
+      "gender": "teste",
+      "birthDate": "teste",
+      "cpf": "1",
+      "email": "t@t.com",
+      "password": "teste",
+      "confirmPassword": "teste",
+      "streetName": "t",
+      "addressNumber": "t",
+      "addressComplement": "t",
+      "addressArea": "t",
+      "addressCity": "t",
+      "addressState": "t",
+      "addressCountry": "t",
+      "addressZipcode": "t"
+    },
+    {
+      "id": "d832",
+      "fullName": "teste2",
+      "gender": "robo",
+      "birthDate": "hoje",
+      "cpf": "nao tem",
+      "email": "teste@teste.com",
+      "password": "teste",
+      "confirmPassword": "teste",
+      "streetName": "b",
+      "addressNumber": "b",
+      "addressComplement": "b",
+      "addressArea": "b",
+      "addressCity": "b",
+      "addressState": "b",
+      "addressCountry": "b",
+      "addressZipcode": "claro que nao"
+    }
+  ],
+  "pointsOfInterest": []
 }
