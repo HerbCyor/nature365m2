@@ -37,5 +37,48 @@
       "addressZipcode": "claro que nao"
     }
   ],
-  "pointsOfInterest": []
+  "pointsofinterest": [
+    {
+      "id": "87ab",
+      "placeName": "My house",
+      "placeDescription": "A beautiful place",
+      "streetName": "a1",
+      "addressNumber": "1",
+      "addressComplement": "2",
+      "addressArea": "3",
+      "addressCity": "4",
+      "addressState": "5",
+      "addressCountry": "6",
+      "addressZipcode": "7",
+      "user": "teste"
+    },
+    {
+      "id": "f9db",
+      "placeName": "aaaaa",
+      "placeDescription": "ssssA veeery beautiful place",
+      "streetName": "v",
+      "addressNumber": "v",
+      "addressComplement": "v",
+      "addressArea": "v",
+      "addressCity": "v",
+      "addressState": "v",
+      "addressCountry": "v",
+      "addressZipcode": "v",
+      "user": "teste2"
+    },
+    {
+      "id": "6e41",
+      "placeName": "computador",
+      "placeDescription": "um lugar lindo para jogar video games todos os dias",
+      "streetName": "12",
+      "addressNumber": "1212",
+      "addressComplement": "12",
+      "addressArea": "12",
+      "addressCity": "12",
+      "addressState": "12",
+      "addressCountry": "12",
+      "addressZipcode": "12",
+      "user": "teste"
+    }
+  ]
 }

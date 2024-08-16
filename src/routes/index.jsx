@@ -3,6 +3,9 @@ import { HomePage } from '../pages/home'
 import { LoginPage } from '../pages/login'
 import { SignUpPage } from '../pages/signup'
 import { DashBoardHome } from '../pages/dashboard/home'
+import { TemplatePrivateroute } from '../templates/private-route'
+import { ListPointsOfInterest } from '../pages/dashboard/list'
+import { CreatePointOfInterestPage } from '../pages/dashboard/create'
 
 export function AppRoutes() {
     return (
@@ -10,8 +13,11 @@ export function AppRoutes() {
             <Route path='/' element={<HomePage />} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/cadastrar' element={<SignUpPage />} />
-            <Route path='/dashboard'>
+            <Route path='/dashboard' element={<TemplatePrivateroute />}>
                 <Route path='/dashboard' element={<DashBoardHome />} />
+                <Route path='list' element={<ListPointsOfInterest />} />
+
+                <Route path='create' element={<CreatePointOfInterestPage />} />
             </Route>
 
         </Routes>
