@@ -1,10 +1,10 @@
 import { Card } from "react-bootstrap";
 
-export function InfoCard({ quantity, title }) {
+export function InfoCard({ quantity, title, id }) {
     return (
         <>
             <div>
-                <Card>
+                <Card id={id}>
                     <Card.Body>
                         <Card.Title>{quantity}</Card.Title>
                         <Card.Text>

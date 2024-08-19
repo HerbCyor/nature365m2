@@ -1,0 +1,65 @@
+.navbar {
+    background-color: var(--primary-bg-color);
+    height: 80px;
+}
+
+#nature365 {
+    color: var(--secondary-text-color);
+    font-size: 32px;
+    font-weight: bold
+}
+
+.user-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown {
+    margin-right: 30px;
+}
+
+#menu {
+    background-color: var(--primary-bg-color-dark);
+}
+
+#menu img {
+    width: 20px;
+}
+
+.dropdown-toggle {
+    color: var(--secondary-text-color);
+    background-color: var(--secondary-bg-color);
+}
+
+.dropdown-toggle:hover {
+    color: var(--secondary-text-color);
+    background-color: var(--secondary-bg-color)
+}
+
+.user-email {
+    color: var(--secondary-text-color);
+    font-size: 18px;
+    margin-right: 6px;
+}
+
+main {
+    background-color: white;
+    min-height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+    .user-email {
+        display: none;
+    }
+
+    #menu {
+        width: 50px;
+    }
+
+    #menu .span {
+        display: none;
+    }
+
+}

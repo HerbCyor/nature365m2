@@ -21,6 +21,7 @@ export function ListPointsOfInterest() {
     return (
         <>
             <h1>Meus Locais</h1>
+
             {poiList.map((poi) => {
                 return (
                     <EditModal

@@ -1,0 +1,33 @@
+.card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 32px;
+    margin-bottom: 16px;
+}
+
+.title {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+#infocard1,
+#infocard2 {
+    border: var(--primary-bg-color-dark) solid;
+    border-width: 2px;
+}
+
+.description p {
+    text-align: left;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+}
+
+.address p {
+    margin: 0;
+    text-align: left;
+}
