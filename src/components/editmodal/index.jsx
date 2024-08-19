@@ -2,8 +2,8 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { Modal, Card } from 'react-bootstrap';
 import axios from "axios"
-
 import { useForm } from 'react-hook-form';
+import "./style.css"
 
 export function EditModal({
     id,
@@ -70,10 +70,9 @@ export function EditModal({
     return (
         <>
             <Card>
-                <Card.Header>{placeName}</Card.Header>
+                <Card.Header><h3>{placeName}</h3></Card.Header>
                 <Card.Body>
-                    {placeDescription}
-
+                    <p>{placeDescription}</p>
                 </Card.Body>
                 <Card.Footer>
                     <Button variant="success" onClick={handleShow}>editar</Button>
@@ -83,7 +82,7 @@ export function EditModal({
 
             </Card>
 
-            <Modal id={id} show={show} onHide={handleClose}>
+            <Modal id={id} show={show} onHide={handleClose} size='xl'>
                 <Modal.Header closeButton>
                     <Modal.Title>{placeName}</Modal.Title>
                 </Modal.Header>
@@ -91,45 +90,51 @@ export function EditModal({
                     <div className="form-control">
                         <form onSubmit={handleSubmit(updatePointOfInterest)}>
                             <div className="mb-3">
-                                <label htmlFor="placeName" className="form-label">Rua</label>
+                                <label htmlFor="placeName" className="form-label">Nome</label>
                                 <input type="text" id="placeName" className="form-control" {...register('placeName')} />
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="placeDescription" className="form-label">Rua</label>
+                                <label htmlFor="placeDescription" className="form-label">Descrição</label>
                                 <textarea id="placeDescription" className="form-control" {...register('placeDescription')} />
                             </div>
-                            <div className="mb-3">
-                                <label htmlFor="streetName" className="form-label">Rua</label>
-                                <input type="text" id="streetName" className="form-control" {...register('streetName')} />
+                            <div className='street-data'>
+                                <div className="mb-3 streetName">
+                                    <label htmlFor="streetName" className="form-label">Rua</label>
+                                    <input type="text" id="streetName" className="form-control" {...register('streetName')} />
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="addressNumber" className="form-label">Número</label>
+                                    <input type="text" id="addressNumber" className="form-control" {...register('addressNumber')} />
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="addressComplement" className="form-label">Complemento</label>
+                                    <input type="text" id="addressComplement" className="form-control" {...register('addressComplement')} />
+                                </div>
                             </div>
-                            <div className="mb-3">
-                                <label htmlFor="addressNumber" className="form-label">Número</label>
-                                <input type="text" id="addressNumber" className="form-control" {...register('addressNumber')} />
+                            <div className='area-data'>
+                                <div className="mb-3">
+                                    <label htmlFor="addressArea" className="form-label">Bairro</label>
+                                    <input type="text" id="addressArea" className="form-control" {...register('addressArea')} />
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="addressCity" className="form-label">Cidade</label>
+                                    <input type="text" id="addressCity" className="form-control" {...register('addressCity')} />
+                                </div>
+
+                                <div className="mb-3">
+                                    <label htmlFor="addressState" className="form-label">Estado</label>
+                                    <input type="text" id="addressState" className="form-control" {...register('addressState')} />
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="addressCountry" className="form-label">País</label>
+                                    <input type="text" id="addressCountry" className="form-control" {...register('addressCountry')} />
+                                </div>
+                                <div className="mb-3">
+                                    <label htmlFor="addressZipcode" className="form-label">CEP</label>
+                                    <input type="text" id="addressZipcode" className="form-control" {...register('addressZipcode')} />
+                                </div>
                             </div>
-                            <div className="mb-3">
-                                <label htmlFor="addressComplement" className="form-label">Complemento</label>
-                                <input type="text" id="addressComplement" className="form-control" {...register('addressComplement')} />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="addressArea" className="form-label">Bairro</label>
-                                <input type="text" id="addressArea" className="form-control" {...register('addressArea')} />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="addressCity" className="form-label">Cidade</label>
-                                <input type="text" id="addressCity" className="form-control" {...register('addressCity')} />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="addressState" className="form-label">Estado</label>
-                                <input type="text" id="addressState" className="form-control" {...register('addressState')} />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="addressCountry" className="form-label">País</label>
-                                <input type="text" id="addressCountry" className="form-control" {...register('addressCountry')} />
-                            </div>
-                            <div className="mb-3">
-                                <label htmlFor="addressZipcode" className="form-label">CEP</label>
-                                <input type="text" id="addressZipcode" className="form-control" {...register('addressZipcode')} />
-                            </div>
+
                             <button className="btn btn-primary mt-5 mb-3" type="submit"> Salvar </button>
                             <button className="btn btn-secondary mt-5 mb-3" onClick={handleClose}>
                                 Close

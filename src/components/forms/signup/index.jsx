@@ -2,6 +2,8 @@ import axios from "axios"
 import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
 import { object, ref, string } from 'yup'
+import "./style.css"
+
 
 export function SignUpForm() {
 
@@ -64,19 +66,18 @@ export function SignUpForm() {
     return (
         <>
             <form onSubmit={handleSubmit(createUser)}>
+                <h4>Dados Pessoais</h4>
+                <div className="name-gender">
+                    <div className="mb-3">
+                        <label htmlFor="fullName" className="form-label text-right ">Nome Completo</label>
+                        <input type="text" className="form-control fullName" id="fullName" {...register('fullName')} />
 
-                <h1 className="h3 mb-3 fw-normal">Preencha todos os campos para efetuar o cadastro.</h1>
-                <h3>Dados Pessoais</h3>
+                    </div>
 
-                <div className="mb-3">
-                    <label htmlFor="fullName" className="form-label text-right">Nome Completo</label>
-                    <input type="text" className="form-control" id="fullName" {...register('fullName')} />
-
-                </div>
-
-                <div className="mb-3">
-                    <label htmlFor="gender" className="form-label">Sexo</label>
-                    <input type="text" id="gender" className="form-control" {...register('gender')} />
+                    <div className="mb-3">
+                        <label htmlFor="gender" className="form-label">Sexo</label>
+                        <input type="text" id="gender" className="form-control" {...register('gender')} />
+                    </div>
                 </div>
                 <div className="mb-3">
 

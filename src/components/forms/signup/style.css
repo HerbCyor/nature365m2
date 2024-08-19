@@ -1,0 +1,9 @@
+.name-gender {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.fullName {
+    width: 100%;
+}

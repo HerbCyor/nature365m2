@@ -1,0 +1,29 @@
+.form-control {
+    text-align: left;
+}
+
+.street-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.streetName {
+    width: 100%;
+}
+
+.area-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.addressArea {
+    width: 100%;
+}
+
+.country-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: left
+}

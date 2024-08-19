@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { InfoCard } from "../../../components/infocard"
 import { Accordion } from "react-bootstrap";
+import "./style.css"
 
 export function DashBoardHome() {
 
@@ -24,16 +25,15 @@ export function DashBoardHome() {
     }
     const l = users.length
     const p = pois.length
-    console.log(pois)
     return (
         <>
-            <h1>Dashboard Home</h1>
+            <h1 className="title">Estatísticas</h1>
             <div className="card-container">
-                <InfoCard quantity={l} title="Usuários"></InfoCard>
-                <InfoCard quantity={p} title="Lugares"></InfoCard>
+                <InfoCard quantity={l} title="Usuários" id="infocard1"></InfoCard>
+                <InfoCard quantity={p} title="Lugares" id="infocard2"></InfoCard>
             </div>
             <div className="list-container">
-                <h3>Lugares cadastrados</h3>
+                <h1 className="title">Lugares cadastrados</h1>
                 <Accordion defaultActiveKey={[0]} alwaysOpen>
                     {pois.map((poi) => {
                         return (
@@ -41,12 +41,17 @@ export function DashBoardHome() {
                                 <Accordion.Header>{poi.placeName}</Accordion.Header>
                                 <Accordion.Body>
                                     <div className="description">
-                                        {poi.placeDescription}
+                                        <p>{poi.placeDescription}</p>
                                     </div>
                                     <div className="address">
-                                        <p>Endereço</p>
-                                        {poi.streetName}
+                                        <p>Endereço:</p>
+                                        <p> {poi.streetName}, {poi.addressNumber ? poi.addressNumber + " - " : " "} {poi.addressComplement}</p>
+                                        <p>{poi.addressArea}</p>
+                                        <p>{poi.addressCity} - {poi.addressState} - {poi.addressCountry}</p>
+                                        <p>{poi.addressZipcode}</p>
                                     </div>
+
+
 
                                 </Accordion.Body>
                             </Accordion.Item>
