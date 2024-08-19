@@ -51,7 +51,7 @@ export function SignUpForm() {
                     alert("Houve um erro ao cadastrar usuário")
                 } else {
                     alert("pessoa cadastrada com sucesso")
-                    navigate("/login", { replace: true })
+                    navigate("/", { replace: true })
                 }
             } else {
                 alert("CPF já cadastrado")
@@ -147,7 +147,7 @@ export function SignUpForm() {
 
 
                 <button className="btn btn-primary mt-5 mb-3 w-100 py-2" type="submit"> Cadastrar </button>
-                <p> Já possui cadastro? <Link to="/login" >Login</Link></p>
+                <p> Já possui cadastro? <Link to="/" >Login</Link></p>
             </form>
 
         </>

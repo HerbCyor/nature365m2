@@ -37,5 +37,5 @@ export function TemplatePrivateroute() {
                 </main>
             </div>
         </>
-    ) : <Navigate to="/login"></Navigate>
+    ) : <Navigate to="/"></Navigate>
 }
