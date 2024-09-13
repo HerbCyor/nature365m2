@@ -1,0 +1,15 @@
+.street-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.streetName {
+    width: 100%;
+}
+
+.area-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: left
+}
